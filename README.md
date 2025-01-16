@@ -1,10 +1,10 @@
-# mini_rag
-type project description
+# mini-rag
+
+This is a minimal implementation of the RAG model for question answering.
 
 ## Requirements
 
-- Python 3.8 
-
+- Python 3.8 or later
 
 #### Install Python using MiniConda
 
@@ -18,12 +18,15 @@ $ conda create -n mini-rag python=3.8
 $ conda activate mini-rag
 ```
 
-
 ### (Optional) Setup you command line interface for better readability
 
 ```bash
 export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$ "
 ```
+
+### (Optional) Run Ollama Local LLM Server using Colab + Ngrok
+
+- Check the [notebook](https://colab.research.google.com/drive/1KNi3-9KtP-k-93T3wRcmRe37mRmGhL9p?usp=sharing) + [Video](https://youtu.be/-epZ1hAAtrs)
 
 ## Installation
 
@@ -40,3 +43,29 @@ $ cp .env.example .env
 ```
 
 Set your environment variables in the `.env` file. Like `OPENAI_API_KEY` value.
+
+## Run Docker Compose Services
+
+```bash
+$ cd docker
+$ cp .env.example .env
+```
+
+- update `.env` with your credentials
+
+
+
+```bash
+$ cd docker
+$ sudo docker compose up -d
+```
+
+## Run the FastAPI server
+
+```bash
+$ uvicorn main:app --reload --host 0.0.0.0 --port 5000
+```
+
+## POSTMAN Collection
+
+Download the POSTMAN collection from [/assets/mini-rag-app.postman_collection.json](/assets/mini-rag-app.postman_collection.json)
